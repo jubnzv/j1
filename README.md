@@ -1,7 +1,5 @@
 # J1 Emulator
 
-![](https://github.com/jubnzv/j1/workflows/Unit%20tests/badge.svg)
-
 Emulator for a small stack-based CPU J1.
 
 ### Usage
