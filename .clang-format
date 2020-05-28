@@ -1,0 +1,22 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+AlignEscapedNewlines: Left
+AlignAfterOpenBracket: DontAlign
+
+AlignConsecutiveMacros: 'true'
+ColumnLimit: '120'
+
+# Control of individual brace wrapping cases
+BreakBeforeBraces: Custom
+BraceWrapping: {
+    AfterClass: 'false'
+    AfterControlStatement: 'false'
+    AfterEnum : 'false'
+    AfterFunction : 'true'
+    AfterNamespace : 'true'
+    AfterStruct : 'false'
+    AfterUnion : 'false'
+    BeforeCatch : 'false'
+    BeforeElse : 'false'
+    IndentBraces : 'false'
+}

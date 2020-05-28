@@ -1,0 +1,12 @@
+#ifndef CONFIG_HPP
+#define CONFIG_HPP
+
+// clang-format off
+
+#cmakedefine DEBUG_J1 "@DEBUG_J1@"
+
+#cmakedefine TERM_COLORS "@TERM_COLORS@"
+
+// clang-format on
+
+#endif // CONFIG_HPP
