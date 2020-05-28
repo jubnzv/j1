@@ -86,3 +86,4 @@ CTestTestfile.cmake
 tags
 output
 .clangd
+tests/output/*
