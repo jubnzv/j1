@@ -26,14 +26,22 @@ endif()
 # Use colorized terminal output
 set(TERM_COLORS 1)
 
-configure_file(src/Config.hpp.in src/Config.hpp @ONLY)
+configure_file(src/lib/Config.hpp.in src/lib/Config.hpp @ONLY)
 
 # ##############################################################################
-# Build the interpreter
+# Build executables
 # ##############################################################################
-add_executable(j1 src/main.cpp src/VM.cpp src/J1.cpp src/Stack.cpp
-                  src/IOConsole.cpp)
-set_property(TARGET j1 PROPERTY CXX_STANDARD 20)
+# VM
+add_executable(j1vm src/vm/main.cpp src/vm/VM.cpp src/vm/J1.cpp
+                    src/vm/Stack.cpp src/vm/IOConsole.cpp)
+set_property(TARGET j1vm PROPERTY CXX_STANDARD 20)
+
+# Compiler
+add_executable(j1c src/compiler/main.cpp)
+set_property(TARGET j1c PROPERTY CXX_STANDARD 20)
+
+# Common headers
+include_directories(${PROJECT_SOURCE_DIR}/src/lib/)
 
 # ##############################################################################
 # Tests

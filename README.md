@@ -1,29 +1,32 @@
-# J1 Emulator
+# J1
+Toy virtual machine and Forth to bytecode translator that emulates a small stack-based CPU J1.
 
-Emulator for a small stack-based CPU J1.
+The J1 is a simple 16-bit CPU. It has some RAM, a program counter (PC), a data stack and a call/return stack. It has a small set of built-in arithmetic instructions. Fields in the J1 instructions control the arithmetic function, and write the results back to the data stacks.
 
-The J1 is a simple 16-bit CPU. It has some RAM, a program counter (PC), a data stack and a call/return stack. It has a small set of built-in arithmetic instructions. Fields in the J1 instructions control the arithmetic function, and write the results back to the data stacks. [1]
+### Build
+```bash
+cmake . -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+ctest  # running unit tests
+```
 
 ### Usage
-Build:
 ```bash
-cmake .
-make -j$(nproc)
+output/bin/j1c examples/add.ft -o examples/add.bin
+output/bin/j1vm examples/add.bin
 ```
 
-Running unit tests:
-```bash
-ctest
 ```
-
-Execute demo ROM:
-```bash
-output/bin/j1 assets/add.bin
-```
-
-Start interactive session:
-```bash
-output/bin/j1
+RAM:
+<empty>
+ <255 empty lines>
+PC:     0000000000000001
+Data stack:
+ 0000000000000010
+ 0000000000000001
+ 0000000000000001
+Return stack:
+ <empty>
 ```
 
 ### Resources

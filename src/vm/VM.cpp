@@ -133,7 +133,9 @@ int VM::ExecuteImage(const char *file_path, bool show_dump)
 
     info("Completed");
     if (show_dump) {
+        std::cout << "RAM:" << std::endl;
         _c.PrintRAMDump();
+        _c.PrintStackDump();
     }
 
     return 0;
